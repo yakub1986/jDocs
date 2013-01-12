@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Docs</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="jDocs.js"></script>
+</head>
+<body>
+	<div id="info"></div>
+	<div id="page" ></div>
+<script type="text/javascript">
+var pageopt = {
+	size: 'Q',
+	margin: {top: '2.5cm', right: '2cm', bottom: '2cm', left: '2cm'},
+	grid: 4,
+	pages: [
+		{
+			size: {w: 816, h: 400},
+			margin: {top: 20, right: 20, bottom: 20, left: 20},
+			items: [
+				{
+					pos: {x: 20, y: 20},
+					size: {w: 100, h: 100}
+				}
+			]
+		}
+	]
+};
+//console.log([pageopt.length, mypage.length]);
+$doc = $("#page").doc(pageopt);
+$doc.addPage();
+console.log($doc.data);
+a = '2cm'.match(/^(\d+(\.\d+)?)(in|em|pt|cm|px)?$/);
+//alert(a[1] * 12 / 3.175)
+//$doc.addPage({size: 'a4'});
+//$doc.addItem('<textarea />', {page:0, size: {w:200,h:100}, pos: {x: 100, y: 100}} );
+</script>
+</body>
+</html>
